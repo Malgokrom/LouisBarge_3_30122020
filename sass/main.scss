@@ -1,15 +1,18 @@
-$color-primary: #F2F2F2;
-$color-bg-page: #FFFFFF;
-$color-txt: #000000;
-$color-bg-footer: #353535;
-$color-txt-footer: #FFFFFF;
-$color-txt-btn: #FFFFFF;
+$couleur-1: #9356DC;
+$couleur-2: #FF79DA;
+$couleur-3: #99E2D0;
+$couleur-bg-page: #FFFFFF;
+$couleur-bg-bloc: #F2F2F2;
+$couleur-bg-footer: #353535;
+$couleur-txt-page: #000000;
+$couleur-txt-btn: #FFFFFF;
+$couleur-txt-footer: #FFFFFF;
 
-@function decal_clarte ($color, $decal) {
-    @if (lightness($color) < 50%) {
-        @return lighten($color, $decal);
+@function decal_clarte ($couleur, $decalage) {
+    @if (lightness($couleur) < 50%) {
+        @return lighten($couleur, $decalage);
     } @else {
-        @return darken($color, $decal);
+        @return darken($couleur, $decalage);
     }
 }
 
@@ -27,12 +30,15 @@ $color-txt-btn: #FFFFFF;
     box-sizing: border-box;
 }
 
+html {
+    background-color: $couleur-bg-page;
+}
+
 body {
-    background-color: $color-bg-page;
-    color: $color-txt;
+    color: $couleur-txt-page;
     font-family: "Roboto";
-    margin: 0 auto;
     max-width: 1440px;
+    margin: 0 auto;
 }
 
 header {
@@ -45,14 +51,14 @@ header {
 }
 
 .intro {
-    background-color: $color-primary;
+    background-color: $couleur-bg-bloc;
     text-align: center;
     padding-bottom: 40px;
     &__lieu {
-        background-color: decal_clarte($color-primary, 10%);
+        background-color: decal_clarte($couleur-bg-bloc, 10%);
         width: 100%;
         padding: 15px;
-        border-top: 3px solid decal_clarte($color-primary, 20%);
+        border-top: 3px solid decal_clarte($couleur-bg-bloc, 20%);
     }
     &__titre {
         margin: 40px 12% 20px;
@@ -61,12 +67,12 @@ header {
         margin: 0 12% 30px;
     }
     &__btn {
-        color: $color-txt-btn;
-        background-color: purple;
+        color: $couleur-txt-btn;
+        background-color: $couleur-1;
         border: none;
         border-radius: 25px;
         padding: 15px 20px;
-        box-shadow: 4px 4px 4px decal_clarte($color-primary, 15%);
+        box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 15%);
         cursor: pointer;
     }
 }
@@ -80,17 +86,17 @@ header {
         list-style-type: none;
         padding: 0;
         li {
-            background-color: $color-primary;
+            background-color: $couleur-bg-bloc;
             margin-bottom: 20px;
             padding: 20px 0;
             border-radius: 20px;
-            box-shadow: 4px 4px 4px decal_clarte($color-primary, 15%);
+            box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 15%);
         }
     }
 }
 
 .restos {
-    background-color: $color-primary;
+    background-color: $couleur-bg-bloc;
     padding: 40px 20px;
     &__titre {
         margin-top: 0;
@@ -103,15 +109,25 @@ header {
         height: 200px;
         margin-bottom: 15px;
         border-radius: 15px;
-        &--nouv {
-
+        position: relative;
+        div {
+            display: none;
+        }
+        &--nouv div {
+            display: block;
+            background-color: $couleur-3;
+            color: decal_clarte($couleur-3, 40%);
+            padding: 10px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
         }
     }
 }
 
 footer {
-    background-color: $color-bg-footer;
-    color: $color-txt-footer;
+    background-color: $couleur-bg-footer;
+    color: $couleur-txt-footer;
     padding: 20px;
     h3 {
         font-family: "Shrikhand";

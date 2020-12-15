@@ -11,15 +11,14 @@
 }
 
 html {
-  background-color: #b3b3b3;
+  background-color: #FFFFFF;
 }
 
 body {
-  background-color: #FFFFFF;
   color: #000000;
   font-family: "Roboto";
-  margin: 0 auto;
   max-width: 1440px;
+  margin: 0 auto;
 }
 
 header {
@@ -50,7 +49,7 @@ header figure {
 }
 .intro__btn {
   color: #FFFFFF;
-  background-color: purple;
+  background-color: #9356DC;
   border: none;
   border-radius: 25px;
   padding: 15px 20px;
@@ -88,7 +87,21 @@ header figure {
   height: 200px;
   margin-bottom: 15px;
   border-radius: 15px;
+  position: relative;
 }
+.restos__select div {
+  display: none;
+}
+.restos__select--nouv div {
+  display: block;
+  background-color: #99E2D0;
+  color: #278870;
+  padding: 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
 footer {
   background-color: #353535;
   color: #FFFFFF;
