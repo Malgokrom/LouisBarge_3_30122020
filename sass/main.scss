@@ -1,0 +1,79 @@
+$color-primary: #F2F2F2;
+$color-bg-page: #FFFFFF;
+$color-txt: #000000;
+$color-bg-footer: #333333;
+$color-txt-footer: #FFFFFF;
+
+html {
+    background-color: darken($color-bg-page, 30%);
+}
+
+body {
+    background-color: $color-bg-page;
+    color: $color-txt;
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+header {
+    figure {
+        margin: 0;
+    }
+}
+
+.intro {
+    background-color: $color-primary;
+    &__lieu {
+        @if (lightness($color-primary) < 50%) {
+            background-color: lighten($color-primary, 20%);
+        } @else {
+            background-color: darken($color-primary, 20%);
+        }
+    }
+    &__titre {
+
+    }
+    &__descrip {
+
+    }
+    &__btn {
+
+    }
+}
+
+.navig {
+    &__titre {
+
+    }
+    &__opt {
+
+    }
+}
+
+.restos {
+    background-color: $color-primary;
+    &__titre {
+
+    }
+    &__liste {
+
+    }
+    &__select {
+        &--nouv {
+
+        }
+    }
+}
+
+footer {
+    background-color: $color-bg-footer;
+    color: $color-txt-footer;
+    h3 {
+
+    }
+    ul {
+        li {
+
+        }
+    }
+}
