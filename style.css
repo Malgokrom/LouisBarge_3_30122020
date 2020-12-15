@@ -1,0 +1,107 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./polices/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "Shrikhand";
+  src: url("./polices/Shrikhand/Shrikhand-Regular.ttf");
+}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #b3b3b3;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #000000;
+  font-family: "Roboto";
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 25px 0 15px;
+}
+header figure {
+  margin: 0;
+}
+
+.intro {
+  background-color: #F2F2F2;
+  text-align: center;
+  padding-bottom: 40px;
+}
+.intro__lieu {
+  background-color: #d9d9d9;
+  width: 100%;
+  padding: 15px;
+  border-top: 3px solid #bfbfbf;
+}
+.intro__titre {
+  margin: 40px 12% 20px;
+}
+.intro__descrip {
+  margin: 0 12% 30px;
+}
+.intro__btn {
+  color: #FFFFFF;
+  background-color: purple;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 20px;
+  box-shadow: 4px 4px 4px #cccccc;
+  cursor: pointer;
+}
+
+.navig {
+  padding: 40px 20px;
+}
+.navig__titre {
+  margin-top: 0;
+}
+.navig__opt {
+  list-style-type: none;
+  padding: 0;
+}
+.navig__opt li {
+  background-color: #F2F2F2;
+  margin-bottom: 20px;
+  padding: 20px 0;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px #cccccc;
+}
+
+.restos {
+  background-color: #F2F2F2;
+  padding: 40px 20px;
+}
+.restos__titre {
+  margin-top: 0;
+}
+.restos__select {
+  background-color: yellow;
+  height: 200px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+}
+footer {
+  background-color: #353535;
+  color: #FFFFFF;
+  padding: 20px;
+}
+footer h3 {
+  font-family: "Shrikhand";
+  margin-top: 0;
+}
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+footer ul li {
+  margin-top: 8px;
+}

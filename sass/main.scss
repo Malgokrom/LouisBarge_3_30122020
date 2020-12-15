@@ -1,21 +1,44 @@
 $color-primary: #F2F2F2;
 $color-bg-page: #FFFFFF;
 $color-txt: #000000;
-$color-bg-footer: #333333;
+$color-bg-footer: #353535;
 $color-txt-footer: #FFFFFF;
+$color-txt-btn: #FFFFFF;
 
-html {
-    background-color: darken($color-bg-page, 30%);
+@function decal_clarte ($color, $decal) {
+    @if (lightness($color) < 50%) {
+        @return lighten($color, $decal);
+    } @else {
+        @return darken($color, $decal);
+    }
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("./polices/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Shrikhand";
+	src: url("./polices/Shrikhand/Shrikhand-Regular.ttf");
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
     background-color: $color-bg-page;
     color: $color-txt;
+    font-family: "Roboto";
     margin: 0 auto;
     max-width: 1440px;
 }
 
 header {
+    display: flex;
+    justify-content: center;
+    padding: 25px 0 15px;
     figure {
         margin: 0;
     }
@@ -23,42 +46,63 @@ header {
 
 .intro {
     background-color: $color-primary;
+    text-align: center;
+    padding-bottom: 40px;
     &__lieu {
-        @if (lightness($color-primary) < 50%) {
-            background-color: lighten($color-primary, 20%);
-        } @else {
-            background-color: darken($color-primary, 20%);
-        }
+        background-color: decal_clarte($color-primary, 10%);
+        width: 100%;
+        padding: 15px;
+        border-top: 3px solid decal_clarte($color-primary, 20%);
     }
     &__titre {
-
+        margin: 40px 12% 20px;
     }
     &__descrip {
-
+        margin: 0 12% 30px;
     }
     &__btn {
-
+        color: $color-txt-btn;
+        background-color: purple;
+        border: none;
+        border-radius: 25px;
+        padding: 15px 20px;
+        box-shadow: 4px 4px 4px decal_clarte($color-primary, 15%);
+        cursor: pointer;
     }
 }
 
 .navig {
+    padding: 40px 20px;
     &__titre {
-
+        margin-top: 0;
     }
     &__opt {
-
+        list-style-type: none;
+        padding: 0;
+        li {
+            background-color: $color-primary;
+            margin-bottom: 20px;
+            padding: 20px 0;
+            border-radius: 20px;
+            box-shadow: 4px 4px 4px decal_clarte($color-primary, 15%);
+        }
     }
 }
 
 .restos {
     background-color: $color-primary;
+    padding: 40px 20px;
     &__titre {
-
+        margin-top: 0;
     }
     &__liste {
 
     }
     &__select {
+        background-color: yellow;
+        height: 200px;
+        margin-bottom: 15px;
+        border-radius: 15px;
         &--nouv {
 
         }
@@ -68,12 +112,16 @@ header {
 footer {
     background-color: $color-bg-footer;
     color: $color-txt-footer;
+    padding: 20px;
     h3 {
-
+        font-family: "Shrikhand";
+        margin-top: 0;
     }
     ul {
+        list-style-type: none;
+        padding: 0;
         li {
-
+            margin-top: 8px;
         }
     }
 }
