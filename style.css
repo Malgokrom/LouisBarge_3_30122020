@@ -67,12 +67,43 @@ header figure {
   list-style-type: none;
   padding: 0;
 }
-.navig__opt li {
+.navig__opt .element {
+  display: flex;
+  align-items: center;
   background-color: #F2F2F2;
   box-shadow: 4px 4px 4px #cccccc;
   margin-bottom: 20px;
   padding: 20px 0;
   border-radius: 20px;
+  cursor: pointer;
+  transition: all 300ms;
+}
+.navig__opt .element:hover {
+  background-color: #cccccc;
+  box-shadow: 4px 4px 4px #a6a6a6;
+}
+.navig__opt .element__index {
+  display: flex;
+  background-color: #9356DC;
+  width: 25px;
+  height: 25px;
+  border-radius: 12.5px;
+  font-size: 16.6666666667px;
+  position: relative;
+  right: 8px;
+}
+.navig__opt .element__index div {
+  color: #FFFFFF;
+  margin: auto;
+}
+.navig__opt .element__icone {
+  width: 60px;
+  text-align: center;
+  margin: 0;
+  padding-right: 8px;
+}
+.navig__opt .element__txt {
+  margin: 0;
 }
 
 .restos {

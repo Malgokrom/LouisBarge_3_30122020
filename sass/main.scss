@@ -9,6 +9,9 @@ $couleur-txt-page: #000000;
 $couleur-txt-btn: #FFFFFF;
 $couleur-txt-footer: #FFFFFF;
 
+$taille-bloc-index: 25px;
+$taille-txt-index: $taille-bloc-index * (2/3);
+
 @function decal_clarte ($couleur, $decalage) {
     @if (lightness($couleur) < 50%) {
         @return lighten($couleur, $decalage);
@@ -86,12 +89,43 @@ header {
     &__opt {
         list-style-type: none;
         padding: 0;
-        li {
+        .element {
+            display: flex;
+            align-items: center;
             background-color: $couleur-bg-bloc;
             box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 15%);
             margin-bottom: 20px;
             padding: 20px 0;
             border-radius: 20px;
+            cursor: pointer;
+            transition: all 300ms;
+            &:hover {
+                background-color: decal_clarte($couleur-bg-bloc, 15%);
+                box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 30%);
+            }
+            &__index {
+                display: flex;
+                background-color: $couleur-1;
+                width: $taille-bloc-index;
+                height: $taille-bloc-index;
+                border-radius: $taille-bloc-index / 2;
+                font-size: $taille-txt-index;
+                position: relative;
+                right: 8px;
+                div {
+                    color: #FFFFFF;
+                    margin: auto;
+                }
+            }
+            &__icone {
+                width: 60px;
+                text-align: center;
+                margin: 0;
+                padding-right: 8px;
+            }
+            &__txt {
+                margin: 0;
+            }
         }
     }
 }
