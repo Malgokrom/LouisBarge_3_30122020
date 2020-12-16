@@ -3,6 +3,7 @@ $couleur-2: #FF79DA;
 $couleur-3: #99E2D0;
 $couleur-bg-page: #FFFFFF;
 $couleur-bg-bloc: #F2F2F2;
+$couleur-bg-resto: #FFFFFF;
 $couleur-bg-footer: #353535;
 $couleur-txt-page: #000000;
 $couleur-txt-btn: #FFFFFF;
@@ -69,10 +70,10 @@ header {
     &__btn {
         color: $couleur-txt-btn;
         background-color: $couleur-1;
+        box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 15%);
         border: none;
         border-radius: 25px;
         padding: 15px 20px;
-        box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 15%);
         cursor: pointer;
     }
 }
@@ -87,10 +88,10 @@ header {
         padding: 0;
         li {
             background-color: $couleur-bg-bloc;
+            box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 15%);
             margin-bottom: 20px;
             padding: 20px 0;
             border-radius: 20px;
-            box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 15%);
         }
     }
 }
@@ -102,25 +103,58 @@ header {
         margin-top: 0;
     }
     &__liste {
-
-    }
-    &__select {
-        background-color: yellow;
-        height: 200px;
-        margin-bottom: 15px;
-        border-radius: 15px;
-        position: relative;
-        div {
-            display: none;
-        }
-        &--nouv div {
-            display: block;
-            background-color: $couleur-3;
-            color: decal_clarte($couleur-3, 40%);
-            padding: 10px;
-            position: absolute;
-            top: 20px;
-            right: 20px;
+        .element {
+            background-color: $couleur-bg-resto;
+            box-shadow: 4px 4px 4px decal_clarte($couleur-bg-resto, 15%);
+            margin-bottom: 15px;
+            border-radius: 15px;
+            position: relative;
+            &__nouveau {
+                display: none;
+                &--affiche {
+                    display: block;
+                    background-color: $couleur-3;
+                    color: decal_clarte($couleur-3, 40%);
+                    padding: 10px;
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                }
+            }
+            &__image {
+                height: 175px;
+                margin: 0;
+                border-radius: 15px 15px 0 0;
+                cursor: pointer;
+                background-size: cover;
+                background-position: center;
+                &--img1 {background-image: url("./images/restaurants/la_palette_du_gout.jpg");}
+                &--img2 {background-image: url("./images/restaurants/la_note_enchantee.jpg");}
+                &--img3 {background-image: url("./images/restaurants/a_la_francaise.jpg");}
+                &--img4 {background-image: url("./images/restaurants/le_delice_des_sens.jpg");}
+                &:hover + .element__txt {
+                    background-color: $couleur-3;
+                }
+            }
+            &__txt {
+                transition: background-color 300ms;
+                border-radius: 0 0 15px 15px;
+                position: relative;
+                h3 {
+                    margin: 0;
+                    padding: 15px 0 5px 10px;
+                }
+                p {
+                    margin: 0;
+                    padding: 0 0 15px 10px;
+                }
+                figure {
+                    margin: 0;
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                }
+            }
         }
     }
 }

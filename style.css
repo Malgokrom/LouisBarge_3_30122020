@@ -50,10 +50,10 @@ header figure {
 .intro__btn {
   color: #FFFFFF;
   background-color: #9356DC;
+  box-shadow: 4px 4px 4px #cccccc;
   border: none;
   border-radius: 25px;
   padding: 15px 20px;
-  box-shadow: 4px 4px 4px #cccccc;
   cursor: pointer;
 }
 
@@ -69,10 +69,10 @@ header figure {
 }
 .navig__opt li {
   background-color: #F2F2F2;
+  box-shadow: 4px 4px 4px #cccccc;
   margin-bottom: 20px;
   padding: 20px 0;
   border-radius: 20px;
-  box-shadow: 4px 4px 4px #cccccc;
 }
 
 .restos {
@@ -82,21 +82,63 @@ header figure {
 .restos__titre {
   margin-top: 0;
 }
-.restos__select {
-  background-color: yellow;
-  height: 200px;
+.restos__liste .element {
+  background-color: #FFFFFF;
+  box-shadow: 4px 4px 4px #d9d9d9;
   margin-bottom: 15px;
   border-radius: 15px;
   position: relative;
 }
-.restos__select div {
+.restos__liste .element__nouveau {
   display: none;
 }
-.restos__select--nouv div {
+.restos__liste .element__nouveau--affiche {
   display: block;
   background-color: #99E2D0;
   color: #278870;
   padding: 10px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.restos__liste .element__image {
+  height: 175px;
+  margin: 0;
+  border-radius: 15px 15px 0 0;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+}
+.restos__liste .element__image--img1 {
+  background-image: url("./images/restaurants/la_palette_du_gout.jpg");
+}
+.restos__liste .element__image--img2 {
+  background-image: url("./images/restaurants/la_note_enchantee.jpg");
+}
+.restos__liste .element__image--img3 {
+  background-image: url("./images/restaurants/a_la_francaise.jpg");
+}
+.restos__liste .element__image--img4 {
+  background-image: url("./images/restaurants/le_delice_des_sens.jpg");
+}
+.restos__liste .element__image:hover + .element__txt {
+  background-color: #99E2D0;
+}
+.restos__liste .element__txt {
+  transition: background-color 300ms;
+  border-radius: 0 0 15px 15px;
+  position: relative;
+}
+.restos__liste .element__txt h3 {
+  margin: 0;
+  padding: 15px 0 5px 10px;
+}
+.restos__liste .element__txt p {
+  margin: 0;
+  padding: 0 0 15px 10px;
+}
+.restos__liste .element__txt figure {
+  margin: 0;
   position: absolute;
   top: 20px;
   right: 20px;
