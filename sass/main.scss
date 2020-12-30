@@ -59,7 +59,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0; bottom: 0; left: 0; right: 0;
-    z-index: 1;
+    z-index: 2;
     transform-origin: top;
     animation: kf-loader 300ms 3000ms forwards;
     .spinner {
@@ -100,10 +100,20 @@ header {
     text-align: center;
     padding-bottom: 40px;
     &__lieu {
+        display: flex;
+        justify-content: center;
         background-color: decal_clarte($couleur-bg-bloc, 10%);
         width: 100%;
         padding: 15px;
         border-top: 3px solid decal_clarte($couleur-bg-bloc, 20%);
+        p {
+            margin: 0;
+            position: relative;
+            img {
+                position: absolute;
+                left: -25px;
+            }
+        }
     }
     &__titre {
         margin: 40px 12% 20px;
@@ -119,6 +129,24 @@ header {
         border-radius: 25px;
         padding: 15px 20px;
         cursor: pointer;
+        position: relative;
+        z-index: 1;
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+            background: linear-gradient(to top left, lighten($couleur-1, 5%), lighten($couleur-2, 5%));
+            box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 30%);
+            border-radius: 25px;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 300ms;
+        }
     }
 }
 
@@ -139,10 +167,26 @@ header {
             padding: 20px 0;
             border-radius: 20px;
             cursor: pointer;
-            transition: all 300ms;
+            position: relative;
+            z-index: 1;
             &:hover {
+                &::after {
+                    opacity: 1;
+                }
+                figure img:nth-child(2) {
+                    opacity: 1;
+                }
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0; bottom: 0; left: 0; right: 0;
                 background-color: decal_clarte($couleur-bg-bloc, 15%);
                 box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 30%);
+                border-radius: 20px;
+                opacity: 0;
+                z-index: -1;
+                transition: opacity 300ms;
             }
             &__index {
                 display: flex;
@@ -159,10 +203,16 @@ header {
                 }
             }
             &__icone {
-                width: 60px;
-                text-align: center;
-                margin: 0;
+                line-height: 0;
+                margin: 0 20px;
                 padding-right: 8px;
+                position: relative;
+                img:nth-child(2) {
+                    position: absolute;
+                    top: 0; left: 0;
+                    opacity: 0;
+                    transition: opacity 300ms;
+                }
             }
             &__txt {
                 margin: 0;
@@ -183,7 +233,10 @@ header {
             box-shadow: 4px 4px 4px decal_clarte($couleur-bg-resto, 15%);
             margin-bottom: 15px;
             border-radius: 15px;
-            position: relative;
+            &__haut {
+                cursor: pointer;
+                position: relative;
+            }
             &__nouveau {
                 display: none;
                 &--affiche {
@@ -200,21 +253,17 @@ header {
                 height: 175px;
                 margin: 0;
                 border-radius: 15px 15px 0 0;
-                cursor: pointer;
                 background-size: cover;
                 background-position: center;
                 &--img1 {background-image: url("./images/restaurants/la_palette_du_gout.jpg");}
                 &--img2 {background-image: url("./images/restaurants/la_note_enchantee.jpg");}
                 &--img3 {background-image: url("./images/restaurants/a_la_francaise.jpg");}
                 &--img4 {background-image: url("./images/restaurants/le_delice_des_sens.jpg");}
-                &:hover + .element__txt {
-                    background-color: $couleur-3;
-                }
             }
-            &__txt {
-                transition: background-color 300ms;
+            &__bas {
                 border-radius: 0 0 15px 15px;
                 position: relative;
+                z-index: 1;
                 h3 {
                     margin: 0;
                     padding: 15px 0 5px 10px;
@@ -224,15 +273,128 @@ header {
                     padding: 0 0 15px 10px;
                 }
                 figure {
+                    line-height: 0;
                     margin: 0;
+                    cursor: pointer;
                     position: absolute;
                     top: 20px;
                     right: 20px;
+                    &:hover {
+                        &::before {
+                            transform: scaleX(1);
+                        }
+                    }
+                    &::before {
+                        content:"";
+                        position: absolute;
+                        top: 0; bottom: 0; left: 0; right: 0;
+                        background: linear-gradient(to bottom left, $couleur-1, $couleur-2);
+                        z-index: -1;
+                        transform-origin: left;
+                        transform: scaleX(0);
+                        transition: transform 250ms;
+                    }
                 }
             }
         }
     }
 }
+
+/*.restos {
+    background-color: $couleur-bg-bloc;
+    padding: 40px 20px;
+    &__titre {
+        margin-top: 0;
+    }
+    &__liste {
+        .element {
+            background-color: $couleur-bg-resto;
+            box-shadow: 4px 4px 4px decal_clarte($couleur-bg-resto, 15%);
+            margin-bottom: 15px;
+            border-radius: 15px;
+            &__haut {
+                cursor: pointer;
+                position: relative;
+                &:hover + .element__bas::after {opacity: 1;}
+                &:hover + .element__bas figure::before {opacity: 0;}
+                &:hover + .element__bas figure img:nth-child(2) {opacity: 0;}
+            }
+            &__nouveau {
+                display: none;
+                &--affiche {
+                    display: block;
+                    background-color: $couleur-3;
+                    color: decal_clarte($couleur-3, 40%);
+                    padding: 10px;
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                }
+            }
+            &__image {
+                height: 175px;
+                margin: 0;
+                border-radius: 15px 15px 0 0;
+                background-size: cover;
+                background-position: center;
+                &--img1 {background-image: url("./images/restaurants/la_palette_du_gout.jpg");}
+                &--img2 {background-image: url("./images/restaurants/la_note_enchantee.jpg");}
+                &--img3 {background-image: url("./images/restaurants/a_la_francaise.jpg");}
+                &--img4 {background-image: url("./images/restaurants/le_delice_des_sens.jpg");}
+            }
+            &__bas {
+                border-radius: 0 0 15px 15px;
+                position: relative;
+                z-index: 1;
+                h3 {
+                    margin: 0;
+                    padding: 15px 0 5px 10px;
+                }
+                p {
+                    margin: 0;
+                    padding: 0 0 15px 10px;
+                }
+                figure {
+                    line-height: 0;
+                    margin: 0;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    &:hover {
+                        &::before {
+                            transform: scaleX(1);
+                        }
+                    }
+                    img:nth-child(2) {
+                        position: absolute;
+                        top: 0; left: 0;
+                        opacity: 1;
+                        transition: opacity 300ms;
+                    }
+                    &::before {
+                        content:"";
+                        position: absolute;
+                        top: 0; bottom: 0; left: 0; right: 0;
+                        background: linear-gradient(to bottom left, $couleur-1, $couleur-2);
+                        transform-origin: left;
+                        transform: scaleX(0);
+                        transition: transform 250ms;
+                    }
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0; bottom: 0; left: 0; right: 0;
+                    background-color: $couleur-3;
+                    opacity: 0;
+                    z-index: -1;
+                    transition: opacity 300ms;
+                }
+            }
+        }
+    }
+}*/
 
 footer {
     background-color: $couleur-bg-footer;
@@ -247,6 +409,16 @@ footer {
         padding: 0;
         li {
             margin-top: 8px;
+            img {
+                margin-right: 10px;
+            }
+            a {
+                color: $couleur-txt-footer;
+                text-decoration: none;
+                &:hover {
+                    font-style: italic;
+                }
+            }
         }
     }
 }

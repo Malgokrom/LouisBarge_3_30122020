@@ -20,7 +20,7 @@
 		</header>
 
 		<section class="intro">
-			<div class="intro__lieu">Paris, Belleville</div>
+			<div class="intro__lieu"><p><img src="images/icones/localisation.png" alt="localisation" />Paris, Belleville</p></div>
 			<h1 class="intro__titre">Réservez le menu qui vous convient</h1>
 			<p class="intro__descrip">Découvrez des restaurants d'exeption, sélectionnés par nos soins.</p>
 			<button class="intro__btn">Explorer nos restaurants</button>
@@ -31,17 +31,26 @@
 			<ul class="navig__opt">
 				<li class="element">
 					<div class="element__index"><div>1</div></div>
-					<figure class="element__icone"><img src="./images/icones/fonc_1.png" alt="téléphone" /></figure>
+					<figure class="element__icone">
+						<img src="./images/icones/fonc_1_gris.png" alt="téléphone" />
+						<img src="./images/icones/fonc_1_violet.png" alt="téléphone" />
+					</figure>
 					<p class="element__txt">Choisissez un restaurant</p>
 				</li>
 				<li class="element">
 					<div class="element__index"><div>2</div></div>
-					<figure class="element__icone"><img src="./images/icones/fonc_2.png" alt="menu" /></figure>
+					<figure class="element__icone">
+						<img src="./images/icones/fonc_2_gris.png" alt="menu" />
+						<img src="./images/icones/fonc_2_violet.png" alt="menu" />
+					</figure>
 					<p class="element__txt">Composez votre menu</p>
 				</li>
 				<li class="element">
 					<div class="element__index"><div>3</div></div>
-					<figure class="element__icone"><img src="./images/icones/fonc_3.png" alt="restaurant" /></figure>
+					<figure class="element__icone">
+						<img src="./images/icones/fonc_3_gris.png" alt="restaurant" />
+						<img src="./images/icones/fonc_3_violet.png" alt="restaurant" />
+					</figure>
 					<p class="element__txt">Dégustez au restaurant</p>
 				</li>
 			</ul>
@@ -51,51 +60,121 @@
 			<h2 class="restos__titre">Restaurants</h2>
 			<div class="restos__liste">
 				<article class="element">
-					<div class="element__nouveau element__nouveau--affiche">Nouveau</div>
-					<figure class="element__image element__image--img1"></figure>
-					<div class="element__txt">
+					<div class="element__haut">
+						<div class="element__nouveau element__nouveau--affiche">Nouveau</div>
+						<figure class="element__image element__image--img1"></figure>
+					</div>
+					<div class="element__bas">
 						<h3>La palette du goût</h3>
 						<p>Ménilmontant</p>
-						<figure><img src="./images/icones/coeur.png" alt="bonton like" /></figure>
+						<figure><img src="./images/icones/coeur.png" alt="bouton like" /></figure>
 					</div>
 				</article>
 				<article class="element">
-					<div class="element__nouveau element__nouveau--affiche">Nouveau</div>
-					<figure class="element__image element__image--img2"></figure>
-					<div class="element__txt">
+					<div class="element__haut">
+						<div class="element__nouveau element__nouveau--affiche">Nouveau</div>
+						<figure class="element__image element__image--img2"></figure>
+					</div>
+					<div class="element__bas">
 						<h3>La note enchantée</h3>
 						<p>Charonne</p>
-						<figure><img src="./images/icones/coeur.png" alt="bonton like" /></figure>
+						<figure><img src="./images/icones/coeur.png" alt="bouton like" /></figure>
 					</div>
 				</article>
 				<article class="element">
-					<div class="element__nouveau">Nouveau</div>
-					<figure class="element__image element__image--img3"></figure>
-					<div class="element__txt">
+					<div class="element__haut">
+						<div class="element__nouveau">Nouveau</div>
+						<figure class="element__image element__image--img3"></figure>
+					</div>
+					<div class="element__bas">
 						<h3>À la française</h3>
 						<p>Cité Rouge</p>
-						<figure><img src="./images/icones/coeur.png" alt="bonton like" /></figure>
+						<figure><img src="./images/icones/coeur.png" alt="bouton like" /></figure>
 					</div>
 				</article>
 				<article class="element">
-					<div class="element__nouveau">Nouveau</div>
-					<figure class="element__image element__image--img4"></figure>
-					<div class="element__txt">
+					<div class="element__haut">
+						<div class="element__nouveau">Nouveau</div>
+						<figure class="element__image element__image--img4"></figure>
+					</div>
+					<div class="element__bas">
 						<h3>Le délice des sens</h3>
 						<p>Folie-Méricourt</p>
-						<figure><img src="./images/icones/coeur.png" alt="bonton like" /></figure>
+						<figure><img src="./images/icones/coeur.png" alt="bouton like" /></figure>
 					</div>
 				</article>
 			</div>
 		</main>
 
+		<!--<main class="restos">
+			<h2 class="restos__titre">Restaurants</h2>
+			<div class="restos__liste">
+				<article class="element">
+					<div class="element__haut">
+						<div class="element__nouveau element__nouveau--affiche">Nouveau</div>
+						<figure class="element__image element__image--img1"></figure>
+					</div>
+					<div class="element__bas">
+						<h3>La palette du goût</h3>
+						<p>Ménilmontant</p>
+						<figure>
+							<img src="./images/icones/coeur_2_int.png" alt="bouton like" />
+							<img src="./images/icones/coeur_2_ext.png" alt="bouton like" />
+						</figure>
+					</div>
+				</article>
+				<article class="element">
+					<div class="element__haut">
+						<div class="element__nouveau element__nouveau--affiche">Nouveau</div>
+						<figure class="element__image element__image--img2"></figure>
+					</div>
+					<div class="element__bas">
+						<h3>La note enchantée</h3>
+						<p>Charonne</p>
+						<figure>
+							<img src="./images/icones/coeur_2_int.png" alt="bouton like" />
+							<img src="./images/icones/coeur_2_ext.png" alt="bouton like" />
+						</figure>
+					</div>
+				</article>
+				<article class="element">
+					<div class="element__haut">
+						<div class="element__nouveau">Nouveau</div>
+						<figure class="element__image element__image--img3"></figure>
+					</div>
+					<div class="element__bas">
+						<h3>À la française</h3>
+						<p>Cité Rouge</p>
+						<figure>
+							<img src="./images/icones/coeur_2_int.png" alt="bouton like" />
+							<img src="./images/icones/coeur_2_ext.png" alt="bouton like" />
+						</figure>
+					</div>
+				</article>
+				<article class="element">
+					<div class="element__haut">
+						<div class="element__nouveau">Nouveau</div>
+						<figure class="element__image element__image--img4"></figure>
+					</div>
+					<div class="element__bas">
+						<h3>Le délice des sens</h3>
+						<p>Folie-Méricourt</p>
+						<figure>
+							<img src="./images/icones/coeur_2_int.png" alt="bouton like" />
+							<img src="./images/icones/coeur_2_ext.png" alt="bouton like" />
+						</figure>
+					</div>
+				</article>
+			</div>
+		</main>-->
+
 		<footer>
 			<h3>ohmyfood</h3>
 			<ul>
-				<li>Proposer un restaurant</li>
-				<li>Devenir partenaire</li>
-				<li>Mentions légales</li>
-				<li>Contact</li>
+				<li><img src="images/icones/couverts.png" alt="couverts" /><a href="">Proposer un restaurant</a></li>
+				<li><img src="images/icones/mains.png" alt="poignée de mains" /><a href="">Devenir partenaire</a></li>
+				<li><a href="">Mentions légales</a></li>
+				<li><a href="">Contact</a></li>
 			</ul>
 		</footer>
 	</body>
