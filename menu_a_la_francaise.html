@@ -7,8 +7,10 @@
 		<title>OhMyFood - À la française</title>
 	</head>
 	<body>
+        <!--<script src="https://kit.fontawesome.com/5a1ef4fb30.js" crossorigin="anonymous"></script>-->
 		<header>
-			<figure><img src="images/logo/ohmyfood.svg" alt="logo du site" /></figure>
+            <figure><img src="images/logo/ohmyfood.svg" alt="logo du site" /></figure>
+            <figure><a href="index.html"><img src="images/icones/retour.png" alt="retour" /></a></figure>
         </header>
 
         <figure class="img-intro img-intro--alafrancaise"></figure>
@@ -16,32 +18,130 @@
         <main>
             <h1>À la française</h1>
             <section class="menu">
-                <div class="menu__entrees">
+                <div class="menu__liste menu__liste--1">
                     <h2>ENTRÉES</h2>
                     <hr />
-                    <div class="element">
-                        <div class="element__plat">
+                    <ul class="element">
+                        <li class="element__plat">
                             <h3>Tartare de poulpe acidulé</h3>
                             <p>Aux zestes d'orange</p>
-                        </div>
-                        <div class="element__prix">
-                            20€
-                        </div>
-                        <div class="element__valide">
-                            <img src="images/icones/validation.png" alt="test" />
-                        </div>
-                    </div>
+                        </li>
+                        <li class="element__prix">
+                            <p>25€</p>
+                        </li>
+                        <li class="element__valide">
+                            <img src="images/icones/validation.png" alt="validation" />
+                        </li>
+                    </ul>
+                    <ul class="element">
+                        <li class="element__plat">
+                            <h3>Velouté de légumes d'antan</h3>
+                            <p>Carotte, panais, topinambour</p>
+                        </li>
+                        <li class="element__prix">
+                            <p>35€</p>
+                        </li>
+                        <li class="element__valide">
+                            <img src="images/icones/validation.png" alt="validation" />
+                        </li>
+                    </ul>
+                    <ul class="element">
+                        <li class="element__plat">
+                            <h3>Soupe à l'oignon</h3>
+                            <p>Revisitée</p>
+                        </li>
+                        <li class="element__prix">
+                            <p>20€</p>
+                        </li>
+                        <li class="element__valide">
+                            <img src="images/icones/validation.png" alt="validation" />
+                        </li>
+                    </ul>
                 </div>
-                <div class="menu__plats">
+                <div class="menu__liste menu__liste--2">
                     <h2>PLATS</h2>
                     <hr />
+                    <ul class="element">
+                        <li class="element__plat">
+                            <h3>Coquilles Saint-Jacques</h3>
+                            <p>Accompagnées d'une purée de panais</p>
+                        </li>
+                        <li class="element__prix">
+                            <p>40€</p>
+                        </li>
+                        <li class="element__valide">
+                            <img src="images/icones/validation.png" alt="validation" />
+                        </li>
+                    </ul>
+                    <ul class="element">
+                        <li class="element__plat">
+                            <h3>Magret de canard</h3>
+                            <p>Et parmentier de pommes de terre</p>
+                        </li>
+                        <li class="element__prix">
+                            <p>35€</p>
+                        </li>
+                        <li class="element__valide">
+                            <img src="images/icones/validation.png" alt="validation" />
+                        </li>
+                    </ul>
+                    <ul class="element">
+                        <li class="element__plat">
+                            <h3>Pigeonneau d’Ille-et-Vilaine</h3>
+                            <p>Sur son lit de gnocchis aux légumes</p>
+                        </li>
+                        <li class="element__prix">
+                            <p>44€</p>
+                        </li>
+                        <li class="element__valide">
+                            <img src="images/icones/validation.png" alt="validation" />
+                        </li>
+                    </ul>
                 </div>
-                <div class="menu__desserts">
+                <div class="menu__liste menu__liste--3">
                     <h2>DESSERTS</h2>
                     <hr />
+                    <ul class="element">
+                        <li class="element__plat">
+                            <h3>Pétales de violettes glacés</h3>
+                            <p>Et purée de noisettes</p>
+                        </li>
+                        <li class="element__prix">
+                            <p>18€</p>
+                        </li>
+                        <li class="element__valide">
+                            <img src="images/icones/validation.png" alt="validation" />
+                        </li>
+                    </ul>
+                    <ul class="element">
+                        <li class="element__plat">
+                            <h3>Fondant au chocolat</h3>
+                            <p>Revisité</p>
+                        </li>
+                        <li class="element__prix">
+                            <p>22€</p>
+                        </li>
+                        <li class="element__valide">
+                            <img src="images/icones/validation.png" alt="validation" />
+                        </li>
+                    </ul>
+                    <ul class="element">
+                        <li class="element__plat">
+                            <h3>Millefeuille croustillant</h3>
+                            <p>Myrtilles et pâte d’amande</p>
+                        </li>
+                        <li class="element__prix">
+                            <p>23€</p>
+                        </li>
+                        <li class="element__valide">
+                            <img src="images/icones/validation.png" alt="validation" />
+                        </li>
+                    </ul>
                 </div>
             </section>
-            <button>Commander</button>
+            <div class="commander">
+                <button>Commander</button>
+            </div>
         </main>
         
 		<footer>
@@ -50,7 +150,7 @@
 				<li><img src="images/icones/couverts.png" alt="couverts" /><a href="">Proposer un restaurant</a></li>
 				<li><img src="images/icones/mains.png" alt="poignée de mains" /><a href="">Devenir partenaire</a></li>
 				<li><a href="">Mentions légales</a></li>
-				<li><a href="">Contact</a></li>
+				<li><a href="mailto:">Contact</a></li>
 			</ul>
 		</footer>
     </body>

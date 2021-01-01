@@ -2,6 +2,7 @@ $couleur-1: #9356DC;
 $couleur-2: #FF79DA;
 $couleur-3: #99E2D0;
 $couleur-bg-page: #FFFFFF;
+$couleur-bg-header: #FFFFFF;
 $couleur-bg-bloc: #F2F2F2;
 $couleur-bg-footer: #353535;
 $couleur-txt-page: #000000;
@@ -13,6 +14,17 @@ $couleur-txt-footer: #FFFFFF;
         @return lighten($couleur, $decalage);
     } @else {
         @return darken($couleur, $decalage);
+    }
+}
+
+@keyframes menu-affiche {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -35,6 +47,7 @@ html {
 }
 
 body {
+    background-color: $couleur-bg-bloc;
     color: $couleur-txt-page;
     font-family: "Roboto";
     max-width: 1440px;
@@ -42,13 +55,46 @@ body {
 }
 
 header {
+    background-color: $couleur-bg-header;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    figure {
+        line-height: 0;
+    }
+    figure:nth-child(1) {
+        margin: 25px 0 15px;
+    }
+    figure:nth-child(2) {
+        margin: 20px;
+        border-radius: 17px;
+        position: absolute;
+        top: 0; left: 0;
+        &:hover {
+            background-color: decal_clarte($couleur-bg-header, 15%);
+        }
+    }
+}
+
+/*header {
+    background-color: $couleur-bg-header;
     display: flex;
     justify-content: center;
     padding: 25px 0 15px;
+    position: relative;
     figure {
+        line-height: 0;
         margin: 0;
     }
-}
+    figure:nth-child(2) {
+        border-radius: 17px;
+        position: absolute;
+        left: 20px;
+        &:hover {
+            background-color: decal_clarte($couleur-bg-header, 15%);
+        }
+    }
+}*/
 
 main {
     background-color: $couleur-bg-bloc;
@@ -57,17 +103,41 @@ main {
     position: relative;
     bottom: 35px;
     h1 {
-        margin: 0;
+        margin: 0 0 35px 0;
+    }
+    .menu {
+        &__liste {
+            margin: 0 0 50px 0;
+            h2 {
+                font-size: 1em;
+                font-weight: normal;
+                margin: 0 0 0 10px;
+            }
+            hr {
+                background-color: $couleur-3;
+                border: 1px solid $couleur-3;
+                width: 40px;
+                height: 3px;
+                margin: 8px 0 0 10px;
+            }
+            &--1  .element {animation-delay: 300ms;}
+            &--2  .element {animation-delay: 800ms;}
+            &--3  .element {animation-delay: 1300ms;}
+        }
     }
     .element {
         display: flex;
         justify-content: space-between;
         background-color: #FFFFFF;
+        list-style-type: none;
         padding: 15px;
+        margin: 20px 0;
         box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 15%);
         border-radius: 15px;
-        overflow: visible;
+        overflow: hidden;
+        cursor: pointer;
         position: relative;
+        animation: menu-affiche 1000ms both;
         &:hover {
             .element__prix {
                 margin-right: 80px;
@@ -80,17 +150,14 @@ main {
             }
         }
         &__plat {
-            background-color: olive;
             min-width: 0px;
             h3 {
-                background-color: lime;
                 margin: 0 0 5px 0;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
             p {
-                background-color: aqua;
                 margin: 0;
                 white-space: nowrap;
                 overflow: hidden;
@@ -98,12 +165,17 @@ main {
             }
         }
         &__prix {
-            background-color: teal;
-            min-width: 70px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
             transition: margin-right 1000ms;
+            p {
+                font-weight: bold;
+                margin: 0 0 0 15px;
+            }
         }
         &__valide {
-            background-color: red;
+            background-color: $couleur-3;
             display: flex;
             width: 80px;
             height: 100%;
@@ -112,35 +184,39 @@ main {
             transition: transform 1000ms;
             img {
                 margin: auto;
+                border-radius: 11px;
                 transition: transform 1000ms;
             }
         }
     }
-    button {
-        color: $couleur-txt-btn;
-        background: linear-gradient(to top left, $couleur-1, $couleur-2);
-        box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 15%);
-        border: none;
-        border-radius: 25px;
-        padding: 15px 20px;
-        cursor: pointer;
-        position: relative;
-        z-index: 1;
-        &:hover {
-            &::after {
-                opacity: 1;
-            }
-        }
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0; bottom: 0; left: 0; right: 0;
-            background: linear-gradient(to top left, lighten($couleur-1, 5%), lighten($couleur-2, 5%));
-            box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 30%);
+    .commander {
+        text-align: center;
+        button {
+            color: $couleur-txt-btn;
+            background: linear-gradient(to top left, $couleur-1, $couleur-2);
+            box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 15%);
+            border: none;
             border-radius: 25px;
-            opacity: 0;
-            z-index: -1;
-            transition: opacity 300ms;
+            padding: 15px 20px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            &:hover {
+                &::after {
+                    opacity: 1;
+                }
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0; bottom: 0; left: 0; right: 0;
+                background: linear-gradient(to top left, lighten($couleur-1, 5%), lighten($couleur-2, 5%));
+                box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 30%);
+                border-radius: 25px;
+                opacity: 0;
+                z-index: -1;
+                transition: opacity 300ms;
+            }
         }
     }
 }

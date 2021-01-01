@@ -2,6 +2,7 @@ $couleur-1: #9356DC;
 $couleur-2: #FF79DA;
 $couleur-3: #99E2D0;
 $couleur-bg-page: #FFFFFF;
+$couleur-bg-header: #FFFFFF;
 $couleur-bg-bloc: #F2F2F2;
 $couleur-bg-resto: #FFFFFF;
 $couleur-bg-footer: #353535;
@@ -87,11 +88,12 @@ body {
 }
 
 header {
+    background-color: $couleur-bg-header;
     display: flex;
     justify-content: center;
-    padding: 25px 0 15px;
     figure {
-        margin: 0;
+        line-height: 0;
+        margin: 25px 0 15px 0;
     }
 }
 

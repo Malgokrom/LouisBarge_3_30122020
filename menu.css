@@ -1,3 +1,13 @@
+@keyframes menu-affiche {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @font-face {
   font-family: "Roboto";
   src: url("./polices/Roboto/Roboto-Regular.ttf");
@@ -15,6 +25,7 @@ html {
 }
 
 body {
+  background-color: #F2F2F2;
   color: #000000;
   font-family: "Roboto";
   max-width: 1440px;
@@ -22,14 +33,47 @@ body {
 }
 
 header {
+  background-color: #FFFFFF;
   display: flex;
   justify-content: center;
-  padding: 25px 0 15px;
+  position: relative;
 }
 header figure {
-  margin: 0;
+  line-height: 0;
+}
+header figure:nth-child(1) {
+  margin: 25px 0 15px;
+}
+header figure:nth-child(2) {
+  margin: 20px;
+  border-radius: 17px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+header figure:nth-child(2):hover {
+  background-color: #d9d9d9;
 }
 
+/*header {
+    background-color: $couleur-bg-header;
+    display: flex;
+    justify-content: center;
+    padding: 25px 0 15px;
+    position: relative;
+    figure {
+        line-height: 0;
+        margin: 0;
+    }
+    figure:nth-child(2) {
+        border-radius: 17px;
+        position: absolute;
+        left: 20px;
+        &:hover {
+            background-color: decal_clarte($couleur-bg-header, 15%);
+        }
+    }
+}*/
 main {
   background-color: #F2F2F2;
   padding: 35px 20px;
@@ -38,17 +82,45 @@ main {
   bottom: 35px;
 }
 main h1 {
-  margin: 0;
+  margin: 0 0 35px 0;
+}
+main .menu__liste {
+  margin: 0 0 50px 0;
+}
+main .menu__liste h2 {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0 0 0 10px;
+}
+main .menu__liste hr {
+  background-color: #99E2D0;
+  border: 1px solid #99E2D0;
+  width: 40px;
+  height: 3px;
+  margin: 8px 0 0 10px;
+}
+main .menu__liste--1 .element {
+  animation-delay: 300ms;
+}
+main .menu__liste--2 .element {
+  animation-delay: 800ms;
+}
+main .menu__liste--3 .element {
+  animation-delay: 1300ms;
 }
 main .element {
   display: flex;
   justify-content: space-between;
   background-color: #FFFFFF;
+  list-style-type: none;
   padding: 15px;
+  margin: 20px 0;
   box-shadow: 4px 4px 4px #cccccc;
   border-radius: 15px;
-  overflow: visible;
+  overflow: hidden;
+  cursor: pointer;
   position: relative;
+  animation: menu-affiche 1000ms both;
 }
 main .element:hover .element__prix {
   margin-right: 80px;
@@ -60,30 +132,32 @@ main .element:hover .element__valide img {
   transform: rotate(2turn);
 }
 main .element__plat {
-  background-color: olive;
   min-width: 0px;
 }
 main .element__plat h3 {
-  background-color: lime;
   margin: 0 0 5px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 main .element__plat p {
-  background-color: aqua;
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 main .element__prix {
-  background-color: teal;
-  min-width: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   transition: margin-right 1000ms;
 }
+main .element__prix p {
+  font-weight: bold;
+  margin: 0 0 0 15px;
+}
 main .element__valide {
-  background-color: red;
+  background-color: #99E2D0;
   display: flex;
   width: 80px;
   height: 100%;
@@ -94,9 +168,13 @@ main .element__valide {
 }
 main .element__valide img {
   margin: auto;
+  border-radius: 11px;
   transition: transform 1000ms;
 }
-main button {
+main .commander {
+  text-align: center;
+}
+main .commander button {
   color: #FFFFFF;
   background: linear-gradient(to top left, #9356DC, #FF79DA);
   box-shadow: 4px 4px 4px #cccccc;
@@ -107,10 +185,10 @@ main button {
   position: relative;
   z-index: 1;
 }
-main button:hover::after {
+main .commander button:hover::after {
   opacity: 1;
 }
-main button::after {
+main .commander button::after {
   content: "";
   position: absolute;
   top: 0;
