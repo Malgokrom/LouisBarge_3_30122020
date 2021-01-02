@@ -55,26 +55,25 @@ header figure:nth-child(2):hover {
   background-color: #d9d9d9;
 }
 
-/*header {
-    background-color: $couleur-bg-header;
-    display: flex;
-    justify-content: center;
-    padding: 25px 0 15px;
-    position: relative;
-    figure {
-        line-height: 0;
-        margin: 0;
-    }
-    figure:nth-child(2) {
-        border-radius: 17px;
-        position: absolute;
-        left: 20px;
-        &:hover {
-            background-color: decal_clarte($couleur-bg-header, 15%);
-        }
-    }
-}*/
+.img-intro {
+  height: 250px;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+}
+.img-intro--a-la-francaise {
+  background-image: url("./images/restaurants/a_la_francaise.jpg");
+}
+@media (min-width: 769px) {
+  .img-intro {
+    height: 400px;
+  }
+}
+
 main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #F2F2F2;
   padding: 35px 20px;
   border-radius: 35px 35px 0 0;
@@ -82,10 +81,39 @@ main {
   bottom: 35px;
 }
 main h1 {
+  align-self: flex-start;
+  width: 100%;
   margin: 0 0 35px 0;
+}
+@media (min-width: 577px) {
+  main h1 {
+    padding: 0 20px;
+  }
+}
+main .menu {
+  width: 100%;
+  max-width: 450px;
+}
+@media (min-width: 769px) {
+  main .menu {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 }
 main .menu__liste {
   margin: 0 0 50px 0;
+}
+@media (min-width: 769px) {
+  main .menu__liste {
+    margin: 0 20px 50px 20px;
+  }
+}
+@media (min-width: 1200px) {
+  main .menu__liste {
+    width: 28%;
+  }
 }
 main .menu__liste h2 {
   font-size: 1em;
@@ -121,6 +149,16 @@ main .element {
   cursor: pointer;
   position: relative;
   animation: menu-affiche 1000ms both;
+}
+@media (min-width: 769px) {
+  main .element {
+    width: 324px;
+  }
+}
+@media (min-width: 1200px) {
+  main .element {
+    width: 100%;
+  }
 }
 main .element:hover .element__prix {
   margin-right: 80px;
@@ -203,24 +241,22 @@ main .commander button::after {
   transition: opacity 300ms;
 }
 
-.img-intro {
-  height: 250px;
-  margin: 0;
-  background-size: cover;
-  background-position: center;
-}
-.img-intro--alafrancaise {
-  background-image: url("./images/restaurants/a_la_francaise.jpg");
-}
-
 footer {
+  display: flex;
+  flex-direction: column;
   background-color: #353535;
   color: #FFFFFF;
   padding: 20px;
 }
+@media (min-width: 769px) {
+  footer {
+    align-items: center;
+    padding: 40px;
+  }
+}
 footer h3 {
   font-family: "Shrikhand";
-  margin-top: 0;
+  margin: 0;
 }
 footer ul {
   list-style-type: none;
