@@ -76,26 +76,6 @@ header {
     }
 }
 
-/*header {
-    background-color: $couleur-bg-header;
-    display: flex;
-    justify-content: center;
-    padding: 25px 0 15px;
-    position: relative;
-    figure {
-        line-height: 0;
-        margin: 0;
-    }
-    figure:nth-child(2) {
-        border-radius: 17px;
-        position: absolute;
-        left: 20px;
-        &:hover {
-            background-color: decal_clarte($couleur-bg-header, 15%);
-        }
-    }
-}*/
-
 main {
     background-color: $couleur-bg-bloc;
     padding: 35px 20px;

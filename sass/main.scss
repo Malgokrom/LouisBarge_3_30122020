@@ -153,24 +153,43 @@ header {
 }
 
 .navig {
+    display: flex;
+    flex-direction: column;
     padding: 40px 20px;
+    @media (min-width: 577px) {
+        align-items: center;
+    }
     &__titre {
         margin-top: 0;
     }
     &__opt {
+        display: flex;
+        flex-direction: column;
         list-style-type: none;
         padding: 0;
+        @media (min-width: 769px) {
+            flex-direction: row;
+        }
         .element {
             display: flex;
             align-items: center;
             background-color: $couleur-bg-bloc;
             box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 15%);
+            min-width: 220px;
+            max-width: 350px;
             margin-bottom: 20px;
-            padding: 20px 0;
+            padding: 20px 20px 20px 0;
             border-radius: 20px;
             cursor: pointer;
             position: relative;
             z-index: 1;
+            @media (min-width: 769px) {
+                padding-left: 20px;
+                margin: 0 10px;
+                box-shadow: none;
+                border: 5px groove #C0C0C0;
+                border-radius: 0;
+            }
             &:hover {
                 &::after {
                     opacity: 1;
@@ -189,12 +208,16 @@ header {
                 opacity: 0;
                 z-index: -1;
                 transition: opacity 300ms;
+                @media (min-width: 769px) {
+                    box-shadow: none;
+                    border-radius: 0;
+                }
             }
             &__index {
                 display: flex;
                 background-color: $couleur-1;
-                width: $taille-bloc-index;
-                height: $taille-bloc-index;
+                min-width: $taille-bloc-index;
+                min-height: $taille-bloc-index;
                 border-radius: $taille-bloc-index / 2;
                 font-size: $taille-txt-index;
                 position: relative;
@@ -209,6 +232,9 @@ header {
                 margin: 0 20px;
                 padding-right: 8px;
                 position: relative;
+                @media (min-width: 769px) {
+                    margin: 0 10px;
+                }
                 img:nth-child(2) {
                     position: absolute;
                     top: 0; left: 0;
@@ -224,17 +250,39 @@ header {
 }
 
 .restos {
+    display: flex;
+    flex-direction: column;
     background-color: $couleur-bg-bloc;
     padding: 40px 20px;
+    @media (min-width: 577px) {
+        align-items: center;
+    }
+    @media (min-width: 1200px) {
+        max-width: 1000px;
+        margin: auto;
+        border-radius: 40px 40px 0 0;
+    }
     &__titre {
         margin-top: 0;
     }
     &__liste {
+        display: flex;
+        flex-direction: column;
+        @media (min-width: 577px) {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
         .element {
             background-color: $couleur-bg-resto;
             box-shadow: 4px 4px 4px decal_clarte($couleur-bg-resto, 15%);
             margin-bottom: 15px;
             border-radius: 15px;
+            @media (min-width: 577px) {
+                width: 400px;
+                margin: 20px;
+            }
             &__haut {
                 cursor: pointer;
                 position: relative;
@@ -287,7 +335,7 @@ header {
                         }
                     }
                     &::before {
-                        content:"";
+                        content: "";
                         position: absolute;
                         top: 0; bottom: 0; left: 0; right: 0;
                         background: linear-gradient(to bottom left, $couleur-1, $couleur-2);
@@ -303,12 +351,18 @@ header {
 }
 
 footer {
+    display: flex;
+    flex-direction: column;
     background-color: $couleur-bg-footer;
     color: $couleur-txt-footer;
     padding: 20px;
+    @media (min-width: 769px) {
+        align-items: center;
+        padding: 40px;
+    }
     h3 {
         font-family: "Shrikhand";
-        margin-top: 0;
+        margin: 0;
     }
     ul {
         list-style-type: none;
