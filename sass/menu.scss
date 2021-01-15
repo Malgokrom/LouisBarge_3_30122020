@@ -73,6 +73,11 @@ header {
         &:hover {
             background-color: decal_clarte($couleur-bg-header, 15%);
         }
+        i {
+            color: #000000;
+            font-size: 20px;
+            padding: 7px;
+        }
     }
 }
 
@@ -82,6 +87,9 @@ header {
     background-size: cover;
     background-position: center;
     &--a-la-francaise {background-image: url("./images/restaurants/a_la_francaise.jpg");}
+    &--la-note-enchantee {background-image: url("./images/restaurants/la_note_enchantee.jpg");}
+    &--la-palette-du-gout {background-image: url("./images/restaurants/la_palette_du_gout.jpg");}
+    &--le-delice-des-sens {background-image: url("./images/restaurants/le_delice_des_sens.jpg");}
     @media (min-width: 769px) {
         height: 400px;
     }
@@ -96,8 +104,39 @@ main {
     border-radius: 35px 35px 0 0;
     position: relative;
     bottom: 35px;
+    > figure {
+        margin: 0;
+        cursor: pointer;
+        position: absolute;
+        top: 40px; right: 40px;
+        &:hover {
+            i:nth-child(1) {
+                color: $couleur-1;
+            }
+            i:nth-child(2) {
+                opacity: 1;
+            }
+        }
+        i {
+            font-size: 28px;
+        }
+        i:nth-child(1) {
+            color: #000000;
+            transition: color 300ms;
+        }
+        i:nth-child(2) {
+            position: absolute;
+            top: 0; left: 0;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-image: linear-gradient(to bottom left, $couleur-1, $couleur-2);
+            opacity: 0;
+            transition: opacity 300ms;
+        }
+    }
     h1 {
         align-self: flex-start;
+        font-family: "Shrikhand";
         width: 100%;
         margin: 0 0 35px 0;
         @media (min-width: 577px) {
@@ -163,7 +202,7 @@ main {
             }
             .element__valide {
                 transform: translateX(-100%);
-                img {
+                i {
                     transform: rotate(2turn);
                 }
             }
@@ -201,9 +240,9 @@ main {
             position: absolute;
             bottom: 0; right: -80px;
             transition: transform 1000ms;
-            img {
+            i {
+                color: #FFFFFF;
                 margin: auto;
-                border-radius: 11px;
                 transition: transform 1000ms;
             }
         }
@@ -246,7 +285,7 @@ footer {
     background-color: $couleur-bg-footer;
     color: $couleur-txt-footer;
     padding: 20px;
-    @media (min-width: 769px) {
+    @media (min-width: 577px) {
         align-items: center;
         padding: 40px;
     }
@@ -257,9 +296,18 @@ footer {
     ul {
         list-style-type: none;
         padding: 0;
+        @media (min-width: 769px) {
+            display: flex;
+        }
         li {
             margin-top: 8px;
-            img {
+            @media (min-width: 769px) {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            i {
+                text-align: center;
+                width: 20px;
                 margin-right: 10px;
             }
             a {

@@ -105,7 +105,7 @@ header figure {
   margin: 0;
   position: relative;
 }
-.intro__lieu p img {
+.intro__lieu p i {
   position: absolute;
   left: -25px;
 }
@@ -182,19 +182,21 @@ header figure {
   position: relative;
   z-index: 1;
 }
+@media (min-width: 577px) {
+  .navig__opt .element {
+    width: 350px;
+  }
+}
 @media (min-width: 769px) {
   .navig__opt .element {
-    padding-left: 20px;
-    margin: 0 10px;
-    box-shadow: none;
-    border: 5px groove #C0C0C0;
-    border-radius: 0;
+    width: auto;
+    margin: 0 20px;
   }
 }
 .navig__opt .element:hover::after {
   opacity: 1;
 }
-.navig__opt .element:hover figure img:nth-child(2) {
+.navig__opt .element:hover figure i:nth-child(2) {
   opacity: 1;
 }
 .navig__opt .element::after {
@@ -210,12 +212,6 @@ header figure {
   opacity: 0;
   z-index: -1;
   transition: opacity 300ms;
-}
-@media (min-width: 769px) {
-  .navig__opt .element::after {
-    box-shadow: none;
-    border-radius: 0;
-  }
 }
 .navig__opt .element__index {
   display: flex;
@@ -242,7 +238,15 @@ header figure {
     margin: 0 10px;
   }
 }
-.navig__opt .element__icone img:nth-child(2) {
+.navig__opt .element__icone i {
+  text-align: center;
+  width: 20px;
+}
+.navig__opt .element__icone i:nth-child(1) {
+  color: #8c8c8c;
+}
+.navig__opt .element__icone i:nth-child(2) {
+  color: #9356DC;
   position: absolute;
   top: 0;
   left: 0;
@@ -251,6 +255,11 @@ header figure {
 }
 .navig__opt .element__txt {
   margin: 0;
+}
+@media (min-width: 769px) {
+  .navig__opt .element__txt {
+    text-align: center;
+  }
 }
 
 .restos {
@@ -262,13 +271,6 @@ header figure {
 @media (min-width: 577px) {
   .restos {
     align-items: center;
-  }
-}
-@media (min-width: 1200px) {
-  .restos {
-    max-width: 1000px;
-    margin: auto;
-    border-radius: 40px 40px 0 0;
   }
 }
 .restos__titre {
@@ -284,6 +286,11 @@ header figure {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+@media (min-width: 1200px) {
+  .restos__liste {
+    max-width: 1000px;
   }
 }
 .restos__liste .element {
@@ -354,23 +361,133 @@ header figure {
   top: 20px;
   right: 20px;
 }
-.restos__liste .element__bas figure:hover::before {
-  transform: scaleX(1);
+.restos__liste .element__bas figure:hover i:nth-child(1) {
+  color: #9356DC;
 }
-.restos__liste .element__bas figure::before {
-  content: "";
+.restos__liste .element__bas figure:hover i:nth-child(2) {
+  opacity: 1;
+}
+.restos__liste .element__bas figure i {
+  font-size: 28px;
+}
+.restos__liste .element__bas figure i:nth-child(1) {
+  color: #000000;
+  transition: color 300ms;
+}
+.restos__liste .element__bas figure i:nth-child(2) {
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
-  background: linear-gradient(to bottom left, #9356DC, #FF79DA);
-  z-index: -1;
-  transform-origin: left;
-  transform: scaleX(0);
-  transition: transform 250ms;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(to bottom left, #9356DC, #FF79DA);
+  opacity: 0;
+  transition: opacity 300ms;
 }
 
+/*.restos {
+    display: flex;
+    flex-direction: column;
+    background-color: $couleur-bg-bloc;
+    padding: 40px 20px;
+    @media (min-width: 577px) {
+        align-items: center;
+    }
+    &__titre {
+        margin-top: 0;
+    }
+    &__liste {
+        display: flex;
+        flex-direction: column;
+        @media (min-width: 577px) {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        @media (min-width: 1200px) {
+            max-width: 1000px;
+        }
+        .element {
+            background-color: $couleur-bg-resto;
+            box-shadow: 4px 4px 4px decal_clarte($couleur-bg-resto, 15%);
+            margin-bottom: 15px;
+            border-radius: 15px;
+            @media (min-width: 577px) {
+                width: 400px;
+                margin: 20px;
+            }
+            &__haut {
+                cursor: pointer;
+                position: relative;
+            }
+            &__nouveau {
+                display: none;
+                &--affiche {
+                    display: block;
+                    background-color: $couleur-3;
+                    color: decal_clarte($couleur-3, 40%);
+                    padding: 10px;
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                }
+            }
+            &__image {
+                height: 175px;
+                margin: 0;
+                border-radius: 15px 15px 0 0;
+                background-size: cover;
+                background-position: center;
+                &--img1 {background-image: url("./images/restaurants/la_palette_du_gout.jpg");}
+                &--img2 {background-image: url("./images/restaurants/la_note_enchantee.jpg");}
+                &--img3 {background-image: url("./images/restaurants/a_la_francaise.jpg");}
+                &--img4 {background-image: url("./images/restaurants/le_delice_des_sens.jpg");}
+            }
+            &__bas {
+                border-radius: 0 0 15px 15px;
+                position: relative;
+                z-index: 1;
+                h3 {
+                    margin: 0;
+                    padding: 15px 0 5px 10px;
+                }
+                p {
+                    margin: 0;
+                    padding: 0 0 15px 10px;
+                }
+                figure {
+                    line-height: 0;
+                    margin: 0;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    &:hover {
+                        i:nth-child(2) {
+                            opacity: 1;
+                        }
+                    }
+                    i:nth-child(1) {
+                        color: #000000;
+                    }
+                    i:nth-child(2) {
+                        position: absolute;
+                        top: 0; bottom: 0; left: 0; right: 0;
+                        z-index: -1;
+                        opacity: 0;
+                        transition: opacity 250ms;
+                        &::before {
+                            background: linear-gradient($couleur-1, $couleur-2);
+                            background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}*/
 footer {
   display: flex;
   flex-direction: column;
@@ -378,7 +495,7 @@ footer {
   color: #FFFFFF;
   padding: 20px;
 }
-@media (min-width: 769px) {
+@media (min-width: 577px) {
   footer {
     align-items: center;
     padding: 40px;
@@ -392,10 +509,23 @@ footer ul {
   list-style-type: none;
   padding: 0;
 }
+@media (min-width: 769px) {
+  footer ul {
+    display: flex;
+  }
+}
 footer ul li {
   margin-top: 8px;
 }
-footer ul li img {
+@media (min-width: 769px) {
+  footer ul li {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+footer ul li i {
+  text-align: center;
+  width: 20px;
   margin-right: 10px;
 }
 footer ul li a {
