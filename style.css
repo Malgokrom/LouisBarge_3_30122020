@@ -1,6 +1,10 @@
 @font-face {
-  font-family: "Roboto";
-  src: url("./polices/Roboto/Roboto-Regular.ttf");
+  font-family: "Roboto-medium";
+  src: url("./polices/Roboto/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: "Roboto-light";
+  src: url("./polices/Roboto/Roboto-Light.ttf");
 }
 @font-face {
   font-family: "Shrikhand";
@@ -16,7 +20,7 @@ html {
 
 body {
   color: #000000;
-  font-family: "Roboto";
+  font-family: "Roboto-medium";
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -113,11 +117,13 @@ header figure {
   margin: 40px 12% 20px;
 }
 .intro__descrip {
+  font-family: "Roboto-light";
   margin: 0 12% 30px;
 }
 .intro__btn {
   color: #FFFFFF;
   background: linear-gradient(to top left, #9356DC, #FF79DA);
+  font-family: "Roboto-medium";
   box-shadow: 4px 4px 4px #cccccc;
   border: none;
   border-radius: 25px;
@@ -352,6 +358,7 @@ header figure {
   padding: 15px 0 5px 10px;
 }
 .restos__liste .element__bas p {
+  font-family: "Roboto-light";
   margin: 0;
   padding: 0 0 15px 10px;
 }

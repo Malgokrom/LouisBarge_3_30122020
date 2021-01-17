@@ -29,8 +29,18 @@ $couleur-txt-footer: #FFFFFF;
 }
 
 @font-face {
-	font-family: "Roboto";
+	font-family: "Roboto-regular";
 	src: url("./polices/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Roboto-medium";
+	src: url("./polices/Roboto/Roboto-Medium.ttf");
+}
+
+@font-face {
+	font-family: "Roboto-light";
+	src: url("./polices/Roboto/Roboto-Light.ttf");
 }
 
 @font-face {
@@ -49,7 +59,7 @@ html {
 body {
     background-color: $couleur-bg-bloc;
     color: $couleur-txt-page;
-    font-family: "Roboto";
+    font-family: "Roboto-medium";
     max-width: 1440px;
     margin: 0 auto;
 }
@@ -137,9 +147,12 @@ main {
     h1 {
         align-self: flex-start;
         font-family: "Shrikhand";
+        font-size: 1.6em;
+        font-weight: normal;
         width: 100%;
         margin: 0 0 35px 0;
         @media (min-width: 577px) {
+            font-size: 2em;
             padding: 0 20px;
         }
     }
@@ -162,6 +175,7 @@ main {
             }
             h2 {
                 font-size: 1em;
+                font-family: "Roboto-light";
                 font-weight: normal;
                 margin: 0 0 0 10px;
             }
@@ -216,6 +230,7 @@ main {
                 text-overflow: ellipsis;
             }
             p {
+                font-family: "Roboto-light";
                 margin: 0;
                 white-space: nowrap;
                 overflow: hidden;
@@ -228,7 +243,6 @@ main {
             align-items: flex-end;
             transition: margin-right 1000ms;
             p {
-                font-weight: bold;
                 margin: 0 0 0 15px;
             }
         }
@@ -252,10 +266,11 @@ main {
         button {
             color: $couleur-txt-btn;
             background: linear-gradient(to top left, $couleur-1, $couleur-2);
+            font-family: "Roboto-medium";
             box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 15%);
             border: none;
             border-radius: 25px;
-            padding: 15px 20px;
+            padding: 15px 40px;
             cursor: pointer;
             position: relative;
             z-index: 1;

@@ -9,8 +9,16 @@
   }
 }
 @font-face {
-  font-family: "Roboto";
+  font-family: "Roboto-regular";
   src: url("./polices/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "Roboto-medium";
+  src: url("./polices/Roboto/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: "Roboto-light";
+  src: url("./polices/Roboto/Roboto-Light.ttf");
 }
 @font-face {
   font-family: "Shrikhand";
@@ -27,7 +35,7 @@ html {
 body {
   background-color: #F2F2F2;
   color: #000000;
-  font-family: "Roboto";
+  font-family: "Roboto-medium";
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -127,11 +135,14 @@ main > figure i:nth-child(2) {
 main h1 {
   align-self: flex-start;
   font-family: "Shrikhand";
+  font-size: 1.6em;
+  font-weight: normal;
   width: 100%;
   margin: 0 0 35px 0;
 }
 @media (min-width: 577px) {
   main h1 {
+    font-size: 2em;
     padding: 0 20px;
   }
 }
@@ -162,6 +173,7 @@ main .menu__liste {
 }
 main .menu__liste h2 {
   font-size: 1em;
+  font-family: "Roboto-light";
   font-weight: normal;
   margin: 0 0 0 10px;
 }
@@ -224,6 +236,7 @@ main .element__plat h3 {
   text-overflow: ellipsis;
 }
 main .element__plat p {
+  font-family: "Roboto-light";
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
@@ -236,7 +249,6 @@ main .element__prix {
   transition: margin-right 1000ms;
 }
 main .element__prix p {
-  font-weight: bold;
   margin: 0 0 0 15px;
 }
 main .element__valide {
@@ -260,10 +272,11 @@ main .commander {
 main .commander button {
   color: #FFFFFF;
   background: linear-gradient(to top left, #9356DC, #FF79DA);
+  font-family: "Roboto-medium";
   box-shadow: 4px 4px 4px #cccccc;
   border: none;
   border-radius: 25px;
-  padding: 15px 20px;
+  padding: 15px 40px;
   cursor: pointer;
   position: relative;
   z-index: 1;

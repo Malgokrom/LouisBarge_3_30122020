@@ -22,8 +22,13 @@ $taille-txt-index: $taille-bloc-index * (2/3);
 }
 
 @font-face {
-	font-family: "Roboto";
-	src: url("./polices/Roboto/Roboto-Regular.ttf");
+	font-family: "Roboto-medium";
+	src: url("./polices/Roboto/Roboto-Medium.ttf");
+}
+
+@font-face {
+	font-family: "Roboto-light";
+	src: url("./polices/Roboto/Roboto-Light.ttf");
 }
 
 @font-face {
@@ -41,7 +46,7 @@ html {
 
 body {
     color: $couleur-txt-page;
-    font-family: "Roboto";
+    font-family: "Roboto-medium";
     max-width: 1440px;
     margin: 0 auto;
 }
@@ -121,11 +126,13 @@ header {
         margin: 40px 12% 20px;
     }
     &__descrip {
+        font-family: "Roboto-light";
         margin: 0 12% 30px;
     }
     &__btn {
         color: $couleur-txt-btn;
         background: linear-gradient(to top left, $couleur-1, $couleur-2);
+        font-family: "Roboto-medium";
         box-shadow: 4px 4px 4px decal_clarte($couleur-bg-bloc, 15%);
         border: none;
         border-radius: 25px;
@@ -326,6 +333,7 @@ header {
                     padding: 15px 0 5px 10px;
                 }
                 p {
+                    font-family: "Roboto-light";
                     margin: 0;
                     padding: 0 0 15px 10px;
                 }
