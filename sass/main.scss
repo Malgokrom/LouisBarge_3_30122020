@@ -289,6 +289,9 @@ header {
                 margin: 20px;
             }
             &__haut {
+                display: block;
+                border-radius: 15px 15px 0 0;
+                overflow: hidden;
                 cursor: pointer;
                 position: relative;
             }
@@ -307,7 +310,6 @@ header {
             &__image {
                 height: 175px;
                 margin: 0;
-                border-radius: 15px 15px 0 0;
                 background-size: cover;
                 background-position: center;
                 &--img1 {background-image: url("./images/restaurants/la_palette_du_gout.jpg");}

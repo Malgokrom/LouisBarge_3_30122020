@@ -306,6 +306,9 @@ header figure {
   }
 }
 .restos__liste .element__haut {
+  display: block;
+  border-radius: 15px 15px 0 0;
+  overflow: hidden;
   cursor: pointer;
   position: relative;
 }
@@ -324,7 +327,6 @@ header figure {
 .restos__liste .element__image {
   height: 175px;
   margin: 0;
-  border-radius: 15px 15px 0 0;
   background-size: cover;
   background-position: center;
 }
