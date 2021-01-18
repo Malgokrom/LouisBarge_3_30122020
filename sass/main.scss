@@ -346,7 +346,7 @@ header {
                     right: 20px;
                     &:hover {
                         i:nth-child(1) {
-                            color: $couleur-1;
+                            opacity: 0;
                         }
                         i:nth-child(2) {
                             opacity: 1;
@@ -357,13 +357,14 @@ header {
                     }
                     i:nth-child(1) {
                         color: #000000;
-                        transition: color 300ms;
+                        transition: opacity 300ms;
                     }
                     i:nth-child(2) {
                         position: absolute;
                         top: 0; left: 0;
-                        -webkit-text-fill-color: transparent;
+                        color: transparent;
                         background-clip: text;
+                        -webkit-background-clip: text;
                         background-image: linear-gradient(to bottom left, $couleur-1, $couleur-2);
                         opacity: 0;
                         transition: opacity 300ms;
